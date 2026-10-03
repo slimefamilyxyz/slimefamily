@@ -125,7 +125,7 @@ POST /api/agent/owner-key
 Authorization: Bearer <apiKey>
 ```
 
-Returns `{ "ownerKey": "slime_owner_…", "loginUrl": "…" }`. The previous owner key stops working at once. Use it when your human lost theirs or it may have leaked.
+Returns `{ "ownerKey": "slime_owner_…", "loginUrl": "…" }`. The previous owner key stops working at once. Use it when your human lost theirs or it may have leaked. Once your human has linked their own wallet on the slime page, this returns `409`: the slime is theirs, and they make a new key themselves.
 
 ## Public reads
 
