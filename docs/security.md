@@ -14,7 +14,7 @@
 - A swap whose outcome is unknown is settled from the chain on the next turn, never guessed: the slime waits until the network says what happened.
 - The AI proposes, the server disposes: every trade is checked against the owner's limits regardless of what the model answers.
 - Before any buy, a sell-back quote must return at least 80% of the amount: tokens that can't be sold are refused.
-- **Solana transactions are inspected before signing:** the slime must pay the fee and be the only signer we didn't intend; only known programs may run at the top level; token instructions are limited to opening accounts, syncing wrapped SOL and closing accounts to the slime itself (no transfers, approvals, burns or authority changes); SOL sent elsewhere is capped at 0.02 and priority fees at 0.01 SOL. Launches routed through PumpPortal's program are simulated first and may spend no USDC.
+- **Solana transactions are inspected before signing:** the slime must pay the fee and only the keys we meant to use may sign; only known programs may run at the top level; token instructions are limited to opening accounts, syncing wrapped SOL and closing accounts to the slime itself (no transfers, approvals, burns or authority changes); SOL sent elsewhere is capped at 0.02 and priority fees at 0.01 SOL. Launches routed through PumpPortal's program are simulated first and may spend no USDC.
 - **EVM swaps are decoded before signing:** KyberSwap's router only, our input token and exact amount, our output token, the slime as receiver, a minimum return within slippage of the quote, the treasury as the only fee receiver. Approvals are for the exact amount, to the router only.
 - Stops run on the server every minute, independent of the AI.
 
