@@ -109,30 +109,59 @@ Before every buy it also checks the coin can be **sold back** — honeypots are 
 
 ## 🛡️ Safety
 
+Real money deserves boring, strict rules. Here is what stands between a slime's wallet and anything going wrong.
+
 <table>
   <tr>
     <td width="50%" valign="top">
       <b>🔍 Nothing is signed blind</b><br>
-      Every swap built by Jupiter, KyberSwap or PumpPortal is inspected before the slime signs: who pays, which programs run, where the output goes, what may leave the wallet. A transaction that would send funds anywhere but back to the slime is refused.
+      Every swap built by Jupiter, KyberSwap or PumpPortal is decoded and checked <i>before</i> the slime signs: who pays, which programs run, where the output goes, what may leave the wallet. Token approvals, transfers, burns and authority changes are refused; network fees are capped. A transaction that would send funds anywhere but back to the slime is never signed.
     </td>
     <td width="50%" valign="top">
       <b>👛 Your wallet, your money</b><br>
-      Log in with Phantom, MetaMask or Rabby. Withdrawals go <b>only</b> to your linked wallet — a stolen owner key can't send funds elsewhere. Export your slime's key any time.
+      Log in with Phantom, MetaMask or Rabby. Withdrawals go <b>only</b> to your linked wallet. Exporting a slime's key or changing its wallet takes a signature from that wallet <b>made right then</b> — a stolen owner key or an old session can't do either.
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <b>🔑 Keys done right</b><br>
+      Slime wallet keys are encrypted at rest (AES-256-GCM) and decrypted only for the instant of signing. Services that never sign — like the Telegram bot — don't even hold the master key. Owner keys are stored as hashes and rotate in one click.
+    </td>
+    <td valign="top">
+      <b>🧠 The AI proposes, the server decides</b><br>
+      Whatever a model answers, every trade passes the owner's limits, a sell-back check against honeypots and the platform's caps. Stops run on the server every minute, even while the slime sleeps.
     </td>
   </tr>
   <tr>
     <td valign="top">
       <b>📱 Telegram, without the risk</b><br>
-      <a href="https://t.me/slimefamilybot">@slimefamilybot</a> sends trade alerts, stop-loss hits and a daily summary, and can pause, wake or cash out your slime. It can never withdraw or show a key.
+      <a href="https://t.me/slimefamilybot">@slimefamilybot</a> sends trade alerts and can pause, wake or cash out your slime into its own wallet. It can never withdraw or show a key.
     </td>
     <td valign="top">
-      <b>🔑 Keys done right</b><br>
-      Wallet keys are encrypted at rest and decrypted only to sign. Owner keys are stored as hashes and can be rotated in one click. A kill switch stops all live trading at once.
+      <b>🚨 Watched around the clock</b><br>
+      A kill switch stops all live trading at once. The team gets instant alerts when anything stalls, a swap fails or money moves. Swaps with an unknown outcome are settled from the chain, never guessed.
     </td>
   </tr>
 </table>
 
-More in [docs/security.md](docs/security.md).
+<details>
+<summary><b>The full list</b></summary>
+
+| Area | What we do |
+|---|---|
+| Transactions | Solana: fee payer must be the slime, only known programs at the top level, token instructions limited to account setup and wrapped-SOL handling, SOL leaving the wallet capped at 0.02, priority fee capped at 0.01 SOL, router-built launches simulated first. EVM: the KyberSwap call is decoded — router address, input token and amount, output token, receiver = the slime, minimum return, fee receiver = treasury only. |
+| Approvals | EVM approvals are for exactly the trade amount, to the router only. |
+| Withdrawals | Only to the owner's linked wallet; the book follows only after the chain confirms. |
+| Sensitive actions | Key export and wallet changes need a fresh wallet signature (one-time challenge, 10 minutes). A live slime's key can't be exported without a linked wallet. |
+| Accounts | Wallet login by signature, no passwords. Sessions and owner keys are stored only as hashes. |
+| Limits | Each live slime trades with the capital its owner chooses, under a platform ceiling. Daily AI budgets per slime and per platform. |
+| Infrastructure | HTTPS with HSTS, CSP, no framing, no sniffing; rate limits on every write; server login by key only, brute-force banning; encrypted daily backups; logs scrubbed of secrets. |
+| Competition | One prize per person; funding sources of winners are checked before payout. |
+| Tests | 190+ automated tests, including attempts to sign malicious transactions. |
+
+</details>
+
+More in [docs/security.md](docs/security.md). Found something? Open a private security advisory on this repository.
 
 ## 🌐 Chains
 
