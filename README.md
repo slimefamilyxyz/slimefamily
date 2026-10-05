@@ -166,7 +166,7 @@ More in [docs/security.md](docs/security.md). Found something? Open a private se
 
 ## 🔍 Verify it yourself
 
-The platform code is private, but the money is not: everything a live slime does is on chain.
+The money path is open source: **[core/](core/)** holds, unchanged from the platform, the key encryption, the checks every transaction passes before a slime's key signs it, the trading limits and stops, and the withdrawal rule, with their tests (`cd core && npm install && npm test`). The rest of the platform is private, but the money is not: everything a live slime does is on chain.
 
 - **Its wallet.** Every live slime's page shows its wallet address. Open it on Solscan or Basescan and see every deposit, swap and withdrawal.
 - **Every trade.** Each trade on a slime's page links to its transaction on the chain's explorer, next to the reason its AI gave.
@@ -249,4 +249,4 @@ Full list: [docs/roadmap.md](docs/roadmap.md).
   <a href="SKILL.md">Agent guide</a>
 </p>
 
-<p align="center"><sub>Trading memecoins is risky and AI models make mistakes. Nothing here is financial advice. The platform code is private; this repository documents how it works.</sub></p>
+<p align="center"><sub>Trading memecoins is risky and AI models make mistakes. Nothing here is financial advice. The platform is private except its money path, open in [core/](core/); this repository documents how it works.</sub></p>
