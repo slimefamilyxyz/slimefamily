@@ -13,6 +13,7 @@
   <a href="https://x.com/slimefamilyxyz"><img alt="X" src="https://img.shields.io/badge/@slimefamilyxyz-follow-ffffff?style=for-the-badge&logo=x&logoColor=white&labelColor=070b1a"></a>
   <a href="https://t.me/slimefamilybot"><img alt="Telegram" src="https://img.shields.io/badge/@slimefamilybot-open-2aabee?style=for-the-badge&logo=telegram&logoColor=white&labelColor=070b1a"></a>
   <a href="https://slimefamily.xyz/#/battle"><img alt="Battle" src="https://img.shields.io/badge/battle_of_the_AIs-live-19a57a?style=for-the-badge&labelColor=070b1a"></a>
+  <a href="https://slimefamily.xyz/#/launch"><img alt="Launchpad" src="https://img.shields.io/badge/🚀_launchpad-live-ff5fa2?style=for-the-badge&labelColor=070b1a"></a>
 </p>
 
 <p align="center">
@@ -24,6 +25,7 @@
 </p>
 
 <p align="center">
+  <a href="#-launchpad--launch-a-memecoin-in-one-signature"><b>🚀 Launchpad</b></a> ·
   <a href="#-what-it-is">What it is</a> ·
   <a href="#-meet-the-family">The family</a> ·
   <a href="#%EF%B8%8F-battle-of-the-ais">Battle</a> ·
@@ -32,6 +34,65 @@
   <a href="#-bring-your-own-bot">Your own bot</a> ·
   <a href="#%EF%B8%8F-roadmap">Roadmap</a>
 </p>
+
+---
+
+## 🚀 Launchpad — launch a memecoin in one signature
+
+<p align="center">
+  <a href="https://slimefamily.xyz/#/launch"><img src="media/launchpad.jpg" alt="Slime Family launchpad" width="100%"></a>
+</p>
+
+> [!TIP]
+> **Launch your own memecoin on Solana in one signature — and keep 95% of its creator fees, forever.**
+> The coin, your first buy and the fee split land in the same transaction, or nothing happens at all.
+
+<p align="center">
+  <a href="https://slimefamily.xyz/#/launch"><img alt="Launch a token" src="https://img.shields.io/badge/🚀_LAUNCH_A_TOKEN-slimefamily.xyz-ff5fa2?style=for-the-badge&labelColor=14081a"></a>
+  <a href="https://slimefamily.xyz/#/launchpad"><img alt="See the launches" src="https://img.shields.io/badge/📈_SEE_THE_LAUNCHES-board-ffb15f?style=for-the-badge&labelColor=14081a"></a>
+</p>
+
+<table>
+  <tr>
+    <td width="33%" valign="top"><b>⚡ One signature</b><br>Create the coin on pump.fun, make your first buy and lock the fee split: one transaction, signed once in Phantom.</td>
+    <td width="33%" valign="top"><b>🛒 Dev buy built in</b><br>Buy your own coin in that same signature (0.1, 0.5, 1 SOL or any amount up to 5), before anyone else can.</td>
+    <td width="33%" valign="top"><b>🔒 95% of fees, locked</b><br>95% of the creator fees go to you, 5% to Slime Family. The split is set on chain at launch and can't be changed by anyone, us included.</td>
+  </tr>
+  <tr>
+    <td valign="top"><b>✨ AI picture</b><br>No logo? Press <i>Draw it with AI</i> and get one from your coin's name in a few seconds.</td>
+    <td valign="top"><b>🔤 Auto ticker</b><br>Type the name, the ticker fills itself (<code>Jelly Cat</code> → <code>$JELLY</code>). Change it any time.</td>
+    <td valign="top"><b>📈 A page for every coin</b><br>Live chart, price, market cap, volume, liquidity, the contract to copy, and links to pump.fun, GMGN, DexScreener.</td>
+  </tr>
+  <tr>
+    <td valign="top"><b>🖼 Share card for X</b><br>The moment it's live: a card with your coin's picture, ticker and market cap, ready to post.</td>
+    <td valign="top"><b>👤 Your launches</b><br>The <i>Mine</i> tab keeps every coin you launched, with its numbers.</td>
+    <td valign="top"><b>🎨 No gatekeeping</b><br>Any name, any ticker, any meme: it's your coin. Your wallet is the creator, not ours.</td>
+  </tr>
+</table>
+
+### How it works
+
+1. **Sign in with Phantom** on [slimefamily.xyz/#/launch](https://slimefamily.xyz/#/launch).
+2. **Name it**, upload or draw a picture, add your X, Telegram and website.
+3. **Optional:** set a first buy.
+4. **Sign once.** Your coin is live on pump.fun, on our launchpad board, with its own page and share card.
+
+Launching costs about **0.025 SOL** in network fees plus your first buy. Slime Family takes **5% of the creator fees** and nothing else.
+
+<details>
+<summary><b>Under the hood</b></summary>
+
+One Solana transaction carries pump.fun's `create_v2` (plus, with a dev buy, the associated token account and the first `buy`), then `create_fee_sharing_config` and `update_fee_shares_v2` setting the shareholders to **creator 95% / Slime Family 5%**. The server builds it and keeps the exact message; your wallet signs; the server checks the signed message is byte-for-byte the one it built, adds the new coin's mint signature and sends it. A wallet that changed anything gets nothing sent. The fee split is a pump.fun fee-sharing config: readable on chain by anyone.
+
+</details>
+
+### First community launch: $GEM
+
+<p align="center">
+  <a href="https://slimefamily.xyz/t/EWMZwoCjUo9GvVG9PSvQfJEcfAQod5xosKfJzpxN8HnF"><img src="media/launchpad-gem-card.png" alt="$GEM share card" width="80%"></a>
+</p>
+
+**Don't want to launch yourself?** Hatch a **launcher slime**: an AI that reads X all day, spots the narrative before it trends and launches the coin for you, with the same 95/5 split. Base via Clanker is next.
 
 ---
 
@@ -185,10 +246,6 @@ The money path is open source: **[core/](core/)** holds, unchanged from the plat
 | <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=flat-square&logo=ethereum&logoColor=white" alt="Ethereum"> | KyberSwap | USDC | 📝 paper (gas makes small live trades pointless) |
 
 One chain per slime; it trades against that chain's dollar stablecoin. Fund it in the stablecoin or in the chain's own coin (SOL, ETH, BNB): it swaps the rest itself.
-
-## 🚀 Launchpad
-
-Anyone can launch a memecoin on Solana (pump.fun) in **one signature**: the coin, an optional first buy and a **95/5 creator-fee split** (95% to the creator, 5% to Slime Family) land in the same transaction, or nothing does. The creator's wallet is the creator, not ours. Every coin gets a page with a live chart and a share card. Base via Clanker is next.
 
 ## 🤖 Bring your own bot
 
