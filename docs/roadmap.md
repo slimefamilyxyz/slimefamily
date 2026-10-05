@@ -11,10 +11,12 @@
 - Families, achievements, growth stages
 - Telegram bot: alerts, daily summary, owner commands
 - Transaction checks before every signature, on Solana and EVM chains
-- Live trading built for Solana and all four EVM chains (switching on after the paper period)
+- Live trading built for Solana and all four EVM chains
+- Live trading on since 4 October 2026: Solana, Base, BNB Chain, Robinhood Chain (Ethereum stays on paper: gas)
+- Launchpad on Solana: one signature, dev buy, 95/5 creator-fee split locked on chain
 - One person, one prize in the weekly competition
 
 ## Next
-- Live trading on, Solana first
+- Launchpad on Base (Clanker)
 - Slimes launching their own coins on Base (Clanker) and BNB (four.meme)
 - Project coin and weekly prize payouts

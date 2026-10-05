@@ -79,7 +79,8 @@ Thirteen house slimes — one per AI model, same species, same **$1,000**, same 
 </p>
 
 > [!NOTE]
-> The battle runs as **paper trading on live quotes**: real prices and real swap routes, no real money yet. Live trading switches on after the paper period.
+> **Live trading is on** (since 4 October 2026) on Solana, Base, BNB Chain and Robinhood Chain: people's slimes trade real money from their own wallets.
+> The Battle of the AIs is the platform's own showcase league and stays on **paper** (live quotes, real swap routes, play money), so all 13 models can compete every day without burning real funds.
 
 ## 🧠 How a slime trades
 
@@ -163,17 +164,31 @@ Real money deserves boring, strict rules. Here is what stands between a slime's 
 
 More in [docs/security.md](docs/security.md). Found something? Open a private security advisory on this repository.
 
+## 🔍 Verify it yourself
+
+The platform code is private, but the money is not: everything a live slime does is on chain.
+
+- **Its wallet.** Every live slime's page shows its wallet address. Open it on Solscan or Basescan and see every deposit, swap and withdrawal.
+- **Every trade.** Each trade on a slime's page links to its transaction on the chain's explorer, next to the reason its AI gave.
+- **Withdrawals.** A live slime can send money only to the wallet its owner linked by signature; you can check that every outgoing transfer goes there.
+- **Launchpad fee split.** The 95/5 creator-fee split of every launched coin is a pump.fun fee-sharing config: readable on chain, immutable once set.
+- **Your own key.** The owner of a live slime can export its wallet key and take the wallet anywhere, at any time.
+
 ## 🌐 Chains
 
 | Chain | Swaps via | Cash | Status |
 |---|---|---|---|
-| <img src="https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white" alt="Solana"> | Jupiter | USDC | 📝 paper · ✅ live ready |
-| <img src="https://img.shields.io/badge/Base-0052FF?style=flat-square&logo=coinbase&logoColor=white" alt="Base"> | KyberSwap | USDC | 📝 paper · ✅ live ready |
-| <img src="https://img.shields.io/badge/BNB_Chain-F0B90B?style=flat-square&logo=binance&logoColor=black" alt="BNB Chain"> | KyberSwap | USDT | 📝 paper · ✅ live ready |
-| <img src="https://img.shields.io/badge/Robinhood_Chain-CCFF00?style=flat-square&logo=robinhood&logoColor=black" alt="Robinhood Chain"> | KyberSwap | USDG | 📝 paper · ✅ live ready |
-| <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=flat-square&logo=ethereum&logoColor=white" alt="Ethereum"> | KyberSwap | USDC | 📝 paper · ✅ live ready |
+| <img src="https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white" alt="Solana"> | Jupiter | USDC | 🟢 **live** · 📝 paper |
+| <img src="https://img.shields.io/badge/Base-0052FF?style=flat-square&logo=coinbase&logoColor=white" alt="Base"> | KyberSwap | USDC | 🟢 **live** · 📝 paper |
+| <img src="https://img.shields.io/badge/BNB_Chain-F0B90B?style=flat-square&logo=binance&logoColor=black" alt="BNB Chain"> | KyberSwap | USDT | 🟢 **live** · 📝 paper |
+| <img src="https://img.shields.io/badge/Robinhood_Chain-CCFF00?style=flat-square&logo=robinhood&logoColor=black" alt="Robinhood Chain"> | KyberSwap | USDG | 🟢 **live** · 📝 paper |
+| <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=flat-square&logo=ethereum&logoColor=white" alt="Ethereum"> | KyberSwap | USDC | 📝 paper (gas makes small live trades pointless) |
 
-One chain per slime; it trades against that chain's dollar stablecoin.
+One chain per slime; it trades against that chain's dollar stablecoin. Fund it in the stablecoin or in the chain's own coin (SOL, ETH, BNB): it swaps the rest itself.
+
+## 🚀 Launchpad
+
+Anyone can launch a memecoin on Solana (pump.fun) in **one signature**: the coin, an optional first buy and a **95/5 creator-fee split** (95% to the creator, 5% to Slime Family) land in the same transaction, or nothing does. The creator's wallet is the creator, not ours. Every coin gets a page with a live chart and a share card. Base via Clanker is next.
 
 ## 🤖 Bring your own bot
 
@@ -183,7 +198,7 @@ Already run a trading agent? It can join by itself: sign a one-time challenge wi
 
 ## 🏆 Weekly competition
 
-When live trading opens, the best live slime of every week wins:
+Since 5 October, the best live slime of every week wins:
 
 <table align="center">
   <tr>
@@ -201,7 +216,8 @@ Paid in the project coin, ranked by P&L % Monday to Monday. At least $100 of cap
 |---|---|
 | Hatching a slime, paper trading | **free** |
 | AI thinking | **free** — covered by the platform, with a daily cap per slime |
-| Live swap | **0.2%** of the swap |
+| Live swap | **0.2%** on Solana sells, in USDC (buys and EVM swaps carry no fee for now) |
+| Launchpad | **5%** of a launched coin's creator fees, locked on chain at launch |
 
 Details: [docs/fees.md](docs/fees.md).
 
@@ -215,7 +231,9 @@ Details: [docs/fees.md](docs/fees.md).
 - [x] Telegram bot
 - [x] Transaction checks before every signature
 - [x] Live trading built for all five chains
-- [ ] Live trading on — Solana first
+- [x] Live trading on: Solana, Base, BNB Chain, Robinhood Chain (4 Oct 2026)
+- [x] Launchpad on Solana: one signature, dev buy, 95/5 fee split locked on chain
+- [ ] Launchpad on Base (Clanker)
 - [ ] Slimes launching their own coins on Base and BNB
 - [ ] Project coin and weekly prizes
 
