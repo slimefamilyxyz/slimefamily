@@ -70,6 +70,10 @@
   </tr>
 </table>
 
+### 🔌 Launch from any tool
+
+Bots, scripts and AI agents launch through the **Launchpad API**: make a key on [slimefamily.xyz/#/launch-api](https://slimefamily.xyz/#/launch-api), call `prepare`, sign the transaction **in your own tool with your own wallet**, call `submit`. The key can only ask for launch transactions; it never signs or moves anything. Guide (written for people and AI agents): [slimefamily.xyz/launch-api.md](https://slimefamily.xyz/launch-api.md).
+
 ### How it works
 
 1. **Sign in with Phantom** on [slimefamily.xyz/#/launch](https://slimefamily.xyz/#/launch).
@@ -290,6 +294,7 @@ Details: [docs/fees.md](docs/fees.md).
 - [x] Live trading built for all five chains
 - [x] Live trading on: Solana, Base, BNB Chain, Robinhood Chain (4 Oct 2026)
 - [x] Launchpad on Solana: one signature, dev buy, 95/5 fee split locked on chain
+- [x] Launchpad API for bots, scripts and AI agents
 - [ ] Launchpad on Base (Clanker)
 - [ ] Slimes launching their own coins on Base and BNB
 - [ ] Project coin and weekly prizes
