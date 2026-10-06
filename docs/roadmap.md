@@ -15,8 +15,8 @@
 - Live trading on since 4 October 2026: Solana, Base, BNB Chain, Robinhood Chain (Ethereum stays on paper: gas)
 - Launchpad on Solana: one signature, dev buy, 95/5 creator-fee split locked on chain
 - One person, one prize in the weekly competition
+- Project coin $SLIME live (6 October 2026); weekly prizes paid in it
 
 ## Next
 - Launchpad on Base (Clanker)
 - Slimes launching their own coins on Base (Clanker) and BNB (four.meme)
-- Project coin and weekly prize payouts
